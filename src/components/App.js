@@ -40,8 +40,8 @@ class App extends Component {
     return (
       <div>
           <Navbar/>
-          { this.props.contractsLoaded ? <Content /> : <div className='content'></div> }
-          <Content/>
+          { this.props.contractsLoaded ? <Content /> : <div className="content"></div> }
+          
       </div>
     );
     }
