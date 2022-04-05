@@ -1,5 +1,6 @@
 import { get } from 'lodash'
 import { createSelector } from "reselect";
+import { ETHER_ADDRESS, tokens, ether} from '../helpers';
 
 const account = state => get(state, 'web3.account')
 export const accountSelector = createSelector(account, a => a) 
@@ -49,7 +50,7 @@ const decorateOrder = (order) => {
 
 
     // if tokenGive
-    if(order.tokenGive == '0x0000000000000000000000000000000000000000') {
+    if(order.tokenGive == ETHER_ADDRESS) {
         etherAmount = order.amountGive
         tokenAmount = order.amountGet
 
@@ -60,7 +61,7 @@ const decorateOrder = (order) => {
 
     return({
         ...order,
-        etherAmount: etherAmount,
-        tokenAmount: tokenAmount
+        etherAmount: ether(etherAmount),
+        tokenAmount: tokens(tokenAmount)
     })
 }
