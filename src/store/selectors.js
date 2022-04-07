@@ -23,7 +23,7 @@ export const contractsLoadedSelector = createSelector(
 const filledOrdersLoaded = state => get(state, 'exchange.filledOrders.loaded', false)
 export const filledOrdersLoadedSelector = createSelector(filledOrdersLoaded, el => el) 
 
-const filledOrders = state => get(state, 'exchange.fillOrders.data', [])
+const filledOrders = state => get(state, 'exchange.filledOrders.data', [])
 export const filledOrdersSelector = createSelector(
     filledOrders,
     (orders) => {
