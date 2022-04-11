@@ -14,7 +14,6 @@ import { contractsLoadedSelector } from '../store/selectors';
 
 class App extends Component {
   componentWillMount() {
-    
     this.loadBlockChainData(this.props.dispatch)
   }
 

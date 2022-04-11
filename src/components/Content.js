@@ -7,12 +7,11 @@ import Trades from "./Trades";
 class Content extends Component {
 
   componentWillMount() {
-    this.loadBlockchainData(this.props)
+    this.loadBlockchainData(this.props.dispatch)
   }
 
-  async loadBlockchainData(props) {
-      const { dispatch, exchange } = props
-      await loadAllOrders(exchange, dispatch)
+  async loadBlockchainData(dispatch) {
+      await loadAllOrders(this.props.exchange, dispatch)
   }
 
     render() {
